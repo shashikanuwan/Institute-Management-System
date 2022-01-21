@@ -23,9 +23,15 @@
                 <p class="text-center">{{$program->start_date_time->toDayDateTimeString()}}</p>
             </div>
 
-            <span class="flex item-center justify-center mt-4 w-full bg-yellow-400 hover:bg-yellow-500 py-1 rounded">
-                <button type="button" class="font-semibold text-gray-800">Subscribe</button>
-            </span>
+            @unlessrole('teacher|admin')
+            <form action="{{ route('subscribe') }}" method="POST">
+                @csrf
+                <input type="hidden" name="program_id" value="{{ $program->getRouteKey() }}">
+                <span class="flex item-center justify-center mt-4 w-full bg-yellow-400 hover:bg-yellow-500 py-1 rounded">
+                    <button type="submit" class="font-semibold text-gray-800">Subscribe</button>
+                </span>
+            </form>
+            @endunlessrole
         </div>
     </div>
     @empty
