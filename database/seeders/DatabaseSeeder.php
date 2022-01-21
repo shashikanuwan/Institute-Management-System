@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             SubjectSeeder::class,
             GradeSeeder::class,
-            ProgramSeeder::class
+            ProgramSeeder::class,
+            SubscribeSeeder::class
         ]);
     }
 }
