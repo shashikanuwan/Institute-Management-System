@@ -36,11 +36,11 @@ class RegisteredUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'first_name' => ['required', 'string', 'max:255'],
-            'last_name' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'alpha', 'max:255'],
+            'last_name' => ['required', 'string', 'alpha', 'max:255'],
+            'user_name' => ['required', 'string', 'regex:/^[A-Za-z0-9_]+$/', 'unique:users'],
             'dob' => ['required', 'date_format:Y-m-d', 'after_or_equal:2002-01-01', 'before_or_equal:2007-01-01'],
-            'nic' => ['required', 'min:10', 'max:12', 'string'],
-            'user_name' => ['required', 'string', 'unique:users'],
+            'nic' => ['required', 'min:10', 'max:12', 'string', 'regex:/^[A-Za-z0-9_]+$/'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -49,9 +49,11 @@ class RegisteredUserController extends Controller
             'last_name' => $request->last_name,
             'dob' => $request->dob,
             'nic' => $request->nic,
-            'user_name' => Str::slug($request->user_name, '-'),
+            'user_name' => Str::lower($request->user_name),
             'password' => Hash::make($request->password),
         ]);
+
+        $user->assignRole('student');
 
         event(new Registered($user));
 

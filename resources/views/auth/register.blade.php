@@ -13,14 +13,14 @@
             @csrf
 
             <!--First Name -->
-            <div>
+            <div class="mt-4">
                 <x-label for="first_name" :value="__('First name')" />
 
                 <x-input id="first_name" class="block mt-1 w-full" type="text" name="first_name" :value="old('first_name')" required autofocus />
             </div>
 
             <!--Last Name -->
-            <div>
+            <div class="mt-4">
                 <x-label for="last_name" :value="__('Last name')" />
 
                 <x-input id="last_name" class="block mt-1 w-full" type="text" name="last_name" :value="old('last_name')" required autofocus />
@@ -28,7 +28,7 @@
 
             <!-- User Name -->
             <div class="mt-4">
-                <x-label for="user_name" :value="__('User Name')" />
+                <x-label for="user_name" :value="__('User Name (Use underscores for spaces)')" />
 
                 <x-input id="user_name" class="block mt-1 w-full" type="text" name="user_name" :value="old('user_name')" required />
             </div>
