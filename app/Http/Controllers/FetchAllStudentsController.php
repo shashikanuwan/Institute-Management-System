@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\StudentCollection;
-use Illuminate\Http\Request;
+use App\Models\User;
 
 class FetchAllStudentsController extends Controller
 {
-    public function __invoke(Request $request)
+    public function __invoke()
     {
-
+        return User::role('student')->get();
     }
 }
