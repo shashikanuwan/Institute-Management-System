@@ -15,7 +15,7 @@
 
             <div class="mt-2 items-center justify-center">
                 <span class="text-sm">Instructor by : </span>
-                <p>{{$subscribe->program->teacher->first_name}} {{$subscribe->program->teacher->last_name}}</p>
+                <p>{{$subscribe->program->teacher->fullName}}</p>
             </div>
 
             <div class="mt-2">

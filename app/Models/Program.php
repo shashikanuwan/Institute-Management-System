@@ -14,8 +14,6 @@ class Program extends Model
         'start_date_time',
     ];
 
-    // relationships
-
     public function teacher()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -31,8 +29,6 @@ class Program extends Model
         return $this->belongsTo(Grade::class);
     }
 
-    // actions
-
     public function enrollStudent(User $user)
     {
         $enrol = new Subscribe();
@@ -40,8 +36,6 @@ class Program extends Model
         $enrol->program_id = $this->id;
         $enrol->save();
     }
-
-    //bool
 
     public function hasRequest(User $user): bool
     {

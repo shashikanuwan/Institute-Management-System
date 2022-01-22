@@ -15,8 +15,6 @@ class Subscribe extends Model
         'program_id',
     ];
 
-    // relationships
-
     public function student()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -25,5 +23,14 @@ class Subscribe extends Model
     public function program()
     {
         return $this->belongsTo(Program::class);
+    }
+
+    public function scopeSubscribedProgramIds($query, User $user)
+    {
+        $query->select('program_id')
+            ->where('user_id', $user->id)
+            ->get()
+            ->pluck('program_id')
+            ->all();
     }
 }

@@ -10,16 +10,15 @@ class SubscribeController extends Controller
 {
     public function __invoke(SubscribeRequest $request)
     {
-        /** @var Program $program */
+        $bool = Program::forHash($request->get('program_id'))->firstOrFail();
 
-        if (Program::forHash($request->get('program_id'))->firstOrFail()->hasRequest(Auth::user())) {
+        if ($bool->hasRequest(Auth::user())) {
             return redirect()
                 ->back()
                 ->with('primary', 'Have already been subscribed');
         }
 
-        $program = Program::forHash($request->get('program_id'))->firstOrFail();
-        $program->enrollStudent(Auth::user());
+        $bool->enrollStudent(Auth::user());
 
         return redirect()
             ->route('student.dashboard')

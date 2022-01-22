@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendStudentRegisterJob;
 use App\Models\User;
-use App\Notifications\StudentRegistration;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -46,12 +46,7 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        /** @var User $program */
-        $admins = User::role('admin')->get();
-
-        foreach ($admins as $admin) {
-            $admin->notify(new StudentRegistration($admin));
-        }
+        dispatch(new SendStudentRegisterJob());
 
         return redirect(RouteServiceProvider::HOME);
     }

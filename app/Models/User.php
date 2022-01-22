@@ -33,7 +33,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    // bool
     public function isStudent(): bool
     {
         return $this->hasRole(Role::ROLE_STUDENT);
@@ -42,5 +41,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function isAdmin(): bool
     {
         return $this->hasRole(Role::ROLE_ADMIN);
+    }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }
