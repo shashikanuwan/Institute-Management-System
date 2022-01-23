@@ -21,7 +21,7 @@
                 </a>
             </div>
             <div class="">
-               <p class="text-center mt-4 md:text-right text-gray-400"> Made by Shashika</p>
+               <p class="text-center mt-4 text-gray-400">Created by shashika</p>
             </div>
         </div>
     </div>

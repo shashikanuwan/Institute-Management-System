@@ -4,11 +4,17 @@
 
 This is a system that allows an educational institution to manage its classes and students.
 
-## Work
+## Usage
 
-App password 👉 password
+First Running Migrations
 
-User Name 👇
+    php artisan migrate  --seed
+
+Login now
+
+App password : password
+
+User Name
 
     * Admin Role   
                     admin_1
