@@ -17,9 +17,9 @@
 
 <section class="antialiased px-4 mt-6">
     <div class="flex flex-col justify-center h-full">
-        <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
+        <div class="w-full max-w-5xl mx-auto bg-white shadow-lg rounded-sm border border-gray-200">
             <header class="px-5 py-4 border-b border-gray-100">
-                <h2 class="font-semibold text-gray-800">All Students</h2>
+                <h2 class="font-semibold text-gray-800">All Subscriptions</h2>
             </header>
             <div class="p-3">
                 <div class="overflow-x-auto">
@@ -33,11 +33,11 @@
                                     <div class="font-semibold">Grade / Subject</div>
                                 </th>
                                 <th class="p-2 whitespace-nowrap">
-                                    <div class="font-semibold">Aubscribe At</div>
+                                    <div class="font-semibold">Start At</div>
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="text-sm divide-y divide-gray-500">
+                        <tbody class="text-sm divide-y">
                             @forelse ($subscribes as $subscribe)
                             <tr>
                                 <td class="p-2 ">
@@ -50,12 +50,13 @@
                                     <div class="font-medium text-gray-800">{{$subscribe->program->subject->name}}</div>
                                 </td>
                                 <td class="p-2 whitespace-nowrap">
-                                    <div class="font-medium">{{$subscribe->created_at->format('M d ,Y - h:i a')}}</div>
+                                    <div class="font-medium">{{$subscribe->program->start_at->format('M d ,Y - h:i a')}}</div>
                                 </td>
                             </tr>
                             @empty
-                            <div>
-                                The student has not subscribed to any class
+                            <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 p-3 rounded relative my-6 w-full shadow" role="alert">
+                                <strong class="font-bold">oops!</strong>
+                                <span class="block sm:inline"> The student has not subscribed to any class</span>
                             </div>
                             @endforelse
                         </tbody>

@@ -19,16 +19,14 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-white">
         @include('layouts.navigation')
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-            <x-alart class="mt-4"/>
         <!-- Page Content -->
         <main>
             {{ $slot }}
         </main>
     </div>
+    <x-footer />
 </body>
 
 </html>

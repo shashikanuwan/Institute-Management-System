@@ -1,18 +1,19 @@
-<div class="flex justify-center mt-6 sm:px-6 lg:px-8">
+<div class="flex mx-3 justify-center mt-6 sm:px-6 lg:px-8">
     <div>
         <div>
             <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <p class="mt-6 text-center text-xl font-extrabold text-gray-900">
                 Update Class
-            </h2>
+            </p>
         </div>
 
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
         <x-alart class="mt-4" />
 
         <div>
-            <form class="mt-8 space-y-6" action="{{route('program.store')}}" method="POST">
+            <form class="mt-8 space-y-6" action="{{route('program.update', $program)}}" method="POST">
                 @csrf
+                {{method_field('PUT')}}
                 <div class="md:grid md:grid-cols-3 gap-6 mt-4">
                     <div class="mt-5 md:mt-2">
                         <label for="">Start Date</label>

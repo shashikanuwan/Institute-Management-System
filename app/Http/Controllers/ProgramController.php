@@ -43,7 +43,7 @@ class ProgramController extends Controller
 
     public function update(ProgramRequest $request, Program $program)
     {
-        $program->update($request->all());
+        $program->update($request->validated());
 
         return redirect()
             ->route('program.index')

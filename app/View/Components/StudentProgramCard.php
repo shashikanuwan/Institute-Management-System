@@ -16,6 +16,7 @@ class StudentProgramCard extends Component
         $this->subscribes = Subscribe::query()
             ->where('user_id', Auth::user()->id)
             ->with('program.grade', 'program.subject', 'program.teacher')
+            ->orderBy('id', 'DESC')
             ->get();
     }
 

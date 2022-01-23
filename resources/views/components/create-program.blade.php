@@ -1,10 +1,10 @@
-<div class="flex justify-center mt-6 sm:px-6 lg:px-8">
+<div class="flex mx-3 justify-center mt-6 sm:px-6 lg:px-8">
     <div>
         <div>
             <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            <p class="mt-6 text-center text-xl font-extrabold text-gray-900">
                 Create a New Class
-            </h2>
+            </p>
         </div>
 
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -21,7 +21,7 @@
 
                     <div class="mt-5 md:mt-2">
                         <label for="">Teacher</label>
-                        <select name="user_id" id="user_id" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Grade" required>
+                        <select name="user_id" id="user_id" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" required>
                             <option selected disabled>Select Teacher</option>
                             @foreach ($users as $user)
                             <option value="{{ $user->id }}">
@@ -33,7 +33,7 @@
 
                     <div class="mt-5 md:mt-2">
                         <label for="">Grade</label>
-                        <select name="grade_id" id="grade_id" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Grade" required>
+                        <select name="grade_id" id="grade_id" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" required>
                             <option selected disabled>Select garade</option>
                             @foreach ($garades as $garade)
                             <option value="{{ $garade->id }}">
@@ -45,7 +45,7 @@
 
                     <div class="mt-5 md:mt-2">
                         <label for="">Subject</label>
-                        <select name="subject_id" id="subject_id" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Grade" required>
+                        <select name="subject_id" id="subject_id" class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" required>
                             <option selected disabled>Select subject</option>
                             @foreach ($subjects as $subject)
                             <option value="{{ $subject->id }}">
