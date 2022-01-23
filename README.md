@@ -5,6 +5,20 @@ This is a system that allows an educational institution to manage its classes an
 
 ## Work
 
+App password : password
+
+User Name
+    * Admin : admin_1
+              admin_2
+              
+    * Student : student_1
+                .
+                .
+                student_10
+
+## Database
+
+<img src="https://embed.creately.com/NzPpQ6Cr6hZ?type=svg">
 
 ## Security Vulnerabilities
 
