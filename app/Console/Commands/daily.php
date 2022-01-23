@@ -19,7 +19,7 @@ class daily extends Command
     public function handle()
     {
         DB::table('programs')
-        ->where('start_date_time', "<", Carbon::now() )
-        ->delete();
+            ->where('start_at', "<", Carbon::now()->subDays(1))
+            ->delete();
     }
 }

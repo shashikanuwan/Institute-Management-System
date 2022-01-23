@@ -10,7 +10,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('daily:delete')
-            ->daily();
+        ->everyMinute();
     }
 
     protected function commands()
