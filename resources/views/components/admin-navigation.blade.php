@@ -14,8 +14,8 @@
                         </div>
 
                         <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('admin.dashboard')">
-                                {{ __('Create Class') }}
+                            <x-nav-link :href="route('program.index')" :active="request()->routeIs('program.index')">
+                                {{ __('Class') }}
                             </x-nav-link>
                         </div>
                     </div>

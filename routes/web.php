@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\StudentDashboardController;
 use App\Http\Controllers\StudentSubscriptionController;
 use App\Http\Controllers\SubscribeController;
@@ -32,6 +33,8 @@ Route::middleware(['role:admin'])->group(function () {
 
     Route::get('/student/{user}/subscribe',  StudentSubscriptionController::class)
         ->name('student.subscribe');
+
+    Route::resource('program', ProgramController::class);
 });
 
 require __DIR__ . '/auth.php';
