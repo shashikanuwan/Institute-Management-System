@@ -21,9 +21,9 @@ class ProgramController extends Controller
         return view('create-program');
     }
 
-    public function store(ProgramRequest $request, Program $program)
+    public function store(ProgramRequest $request)
     {
-        $program->create($request->validated());
+        $request->store();
 
         return redirect()
             ->route('program.index')

@@ -10,12 +10,7 @@ class Program extends Model
 {
     use HasFactory, Obfuscatable;
 
-    protected $fillable = [
-        'start_at',
-        'user_id',
-        'grade_id',
-        'subject_id'
-    ];
+    protected $guarded = [];
 
     protected $dates = [
         'start_at',

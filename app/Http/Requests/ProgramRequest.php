@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Program;
 use App\Models\Role;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -20,5 +21,10 @@ class ProgramRequest extends FormRequest
             'grade_id' => 'required|numeric',
             'subject_id' => 'required|numeric'
         ];
+    }
+
+    public function store()
+    {
+        Program::create($this->validated());
     }
 }
