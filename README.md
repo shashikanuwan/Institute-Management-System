@@ -3,12 +3,8 @@
 ## About App
 This is a system that allows an educational institution to manage its classes and students.
 
-## Learning Laravel
+## Work
 
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
 ## Security Vulnerabilities
 
