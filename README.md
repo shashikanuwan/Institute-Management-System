@@ -24,6 +24,10 @@ User Name 👇
 
 <img src="https://embed.creately.com/NzPpQ6Cr6hZ?type=svg">
 
+## Api
+
+An API has been created to list all students and their contributions.
+
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within this app, please send an e-mail to Shashika Nuwan via [Shashika Nuwan](mailto:kumararanaweera1999@gmail.com). All security vulnerabilities will be promptly addressed.
