@@ -33,4 +33,10 @@ class Subscribe extends Model
             ->pluck('program_id')
             ->all();
     }
+
+    public function scopeGetStudentSubscribes($query, User $user)
+    {
+        $query->with(['program.teacher', 'program.grade', 'program.subject'])
+            ->where('user_id', $user->id);
+    }
 }

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentDashboardController;
+use App\Http\Controllers\StudentSubscriptionController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\UnSubscribeController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +29,9 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/admin/dashboard',  AdminDashboardController::class)
         ->name('admin.dashboard');
+
+    Route::get('/student/{user}/subscribe',  StudentSubscriptionController::class)
+        ->name('student.subscribe');
 });
 
 require __DIR__ . '/auth.php';
