@@ -9,11 +9,11 @@ App password 👉 password
 
 User Name 👇
 
-    * Admin Role 👇   
+    * Admin Role   
                     admin_1
                     admin_2
 
-    * Student Role 👇 
+    * Student Role 
                     student_1
                     .
                         to
@@ -26,4 +26,4 @@ User Name 👇
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Shashika Nuwan via [Shashika Nuwan](mailto:kumararanaweera1999@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this app, please send an e-mail to Shashika Nuwan via [Shashika Nuwan](mailto:kumararanaweera1999@gmail.com). All security vulnerabilities will be promptly addressed.
