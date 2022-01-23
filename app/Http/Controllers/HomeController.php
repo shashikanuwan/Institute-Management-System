@@ -26,6 +26,7 @@ class HomeController extends Controller
                     ->when($subscribedProgramIds != null, function (Builder $query) use ($subscribedProgramIds) {
                         $query->whereNotIn('id', $subscribedProgramIds);
                     })
+                    ->orderBy('id', 'DESC')
                     ->paginate(16)
             ]);
     }

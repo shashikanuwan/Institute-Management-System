@@ -20,7 +20,7 @@
 
             <div class="mt-2">
                 <span class="text-sm text-sky-600">Start at :</span>
-                <p class="text-center">{{$subscribe->program->start_date_time->toDayDateTimeString()}}</p>
+                <p class="text-center">{{$subscribe->program->start_at->toDayDateTimeString()}}</p>
             </div>
 
             <span class="flex item-center justify-center mt-4 w-full bg-yellow-400 hover:bg-yellow-500 py-1 rounded">

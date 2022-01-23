@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\AdminDashboardRequest;
+use App\Http\Requests\AdminRequest;
 use App\Models\User;
 
 class AdminDashboardController extends Controller
 {
-    public function __invoke(AdminDashboardRequest $request)
+    public function __invoke(AdminRequest $request)
     {
         return view('admin-dashboard')
         ->with([

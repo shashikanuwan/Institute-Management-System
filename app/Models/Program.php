@@ -10,8 +10,15 @@ class Program extends Model
 {
     use HasFactory, Obfuscatable;
 
+    protected $fillable = [
+        'start_at',
+        'user_id',
+        'grade_id',
+        'subject_id'
+    ];
+
     protected $dates = [
-        'start_date_time',
+        'start_at',
     ];
 
     public function teacher()

@@ -9,18 +9,18 @@
             <h3 class="text-sm font-semibold text-gray-500">{{$program->grade->name}}</h3>
 
             <div class="mt-2 items-center justify-center">
-                <span class="text-sm">Subject :</span>
+                <span class="text-sm text-sky-600">Subject :</span>
                 <p class="text-lg font-thin"> {{$program->subject->name}}</p>
             </div>
 
             <div class="mt-2 items-center justify-center">
-                <span class="text-sm">Instructor by : </span>
+                <span class="text-sm text-sky-600">Instructor by : </span>
                 <p>{{$program->teacher->fullName}}</p>
             </div>
 
             <div class="mt-2">
                 <span class="text-sm text-sky-600">Start at :</span>
-                <p class="text-center">{{$program->start_date_time->toDayDateTimeString()}}</p>
+                <p class="text-center">{{$program->start_at->toDayDateTimeString()}}</p>
             </div>
 
             @unlessrole('teacher|admin')

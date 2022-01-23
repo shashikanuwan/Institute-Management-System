@@ -10,10 +10,10 @@ class CreateProgramsTable extends Migration
     {
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('start_date_time');
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('grade_id')->constrained();
-            $table->foreignId('subject_id')->constrained();
+            $table->dateTime('start_at');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('grade_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('subject_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

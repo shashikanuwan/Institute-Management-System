@@ -11,15 +11,15 @@ class UserSeeder extends Seeder
     public function run()
     {
         collect(range(1, 10))->each(function ($id) {
-            User::factory()->create(['email' => "student_{$id}@institute.lk"])->assignRole(Role::ROLE_STUDENT);
+            User::factory()->create(['user_name' => "student_{$id}"])->assignRole(Role::ROLE_STUDENT);
         });
 
         collect(range(1, 20))->each(function ($id) {
-            User::factory()->create(['email' => "teacher_{$id}@institute.lk"])->assignRole(Role::ROLE_TEACHER);
+            User::factory()->create(['user_name' => "teacher_{$id}"])->assignRole(Role::ROLE_TEACHER);
         });
 
         collect(range(1, 2))->each(function ($id) {
-            User::factory()->create(['email' => "admin_{$id}@institute.lk"])->assignRole(Role::ROLE_ADMIN);
+            User::factory()->create(['user_name' => "admin_{$id}"])->assignRole(Role::ROLE_ADMIN);
         });
     }
 }

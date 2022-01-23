@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdminRequest;
+use App\Http\Requests\ProgramCreateRequest;
+use App\Models\Grade;
+use App\Models\Program;
+use App\Models\Subject;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProgramController extends Controller
@@ -13,29 +19,44 @@ class ProgramController extends Controller
 
     public function create()
     {
+        return view('create-program');
     }
 
-    public function store(Request $request)
+    public function store(ProgramCreateRequest $request, Program $program)
     {
+        $program->create($request->validated());
+
+        return redirect()
+            ->route('program.index')
+            ->with('success', 'Class created');
     }
 
-
-    public function show($id)
+    public function edit(AdminRequest $request, Program $program)
     {
+        return view('edit-program')
+            ->with([
+                'program' => $program,
+                'users' =>  User::query()->get(),
+                'garades' =>  Grade::query()->get(),
+                'subjects' =>  Subject::query()->get(),
+            ]);
     }
 
-
-    public function edit($id)
+    public function update(Request $request, Program $program)
     {
+        $program->update($request->all());
+
+        return redirect()
+            ->route('program.index')
+            ->with('success', 'Class updated');
     }
 
-
-    public function update(Request $request, $id)
+    public function destroy(AdminRequest $request, Program $program)
     {
-    }
+        $program->delete();
 
-
-    public function destroy($id)
-    {
+        return redirect()
+            ->route('program.index')
+            ->with('success', 'Class deleted');
     }
 }

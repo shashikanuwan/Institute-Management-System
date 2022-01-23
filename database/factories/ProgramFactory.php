@@ -19,7 +19,7 @@ class ProgramFactory extends Factory
         $startDate = Carbon::parse($this->faker->dateTimeBetween('-9 months', '+2 months'));
 
         return [
-            'start_date_time' => $startDate,
+            'start_at' => $startDate,
             'user_id' => User::role(Role::ROLE_TEACHER)->inRandomOrder()->first()->id,
             'grade_id' => Grade::query()->inRandomOrder()->first()->id,
             'subject_id' => Subject::query()->inRandomOrder()->first()->id,

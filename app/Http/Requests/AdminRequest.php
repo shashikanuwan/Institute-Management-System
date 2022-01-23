@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Models\Role;
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdminDashboardRequest extends FormRequest
+class AdminRequest extends FormRequest
 {
     public function authorize()
     {
@@ -14,8 +14,6 @@ class AdminDashboardRequest extends FormRequest
 
     public function rules()
     {
-        return [
-
-        ];
+        return [];
     }
 }
