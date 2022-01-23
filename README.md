@@ -1,6 +1,7 @@
 ## <h1> Institute Management System </h1>
 
 ## About App
+
 This is a system that allows an educational institution to manage its classes and students.
 
 ## Work
@@ -26,7 +27,7 @@ User Name 👇
 
 ## Api
 
-An API has been created to list all students and their contributions.
+An API has been created to list all students and their subscriptions.
 
 ## Security Vulnerabilities
 
