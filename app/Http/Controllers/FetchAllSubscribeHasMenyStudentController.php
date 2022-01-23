@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Subscribe;
+use App\Http\Resources\SubscribeResource;
 use App\Models\User;
 
 class FetchAllSubscribeHasMenyStudentController extends Controller
 {
     public function __invoke(User $user)
     {
-        return response(Subscribe::getStudentSubscribes($user)
-            ->get());
+        $subscribe = $user->subscribes;
+        
+        return SubscribeResource::collection($subscribe);
     }
 }
