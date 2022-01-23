@@ -5,16 +5,20 @@ This is a system that allows an educational institution to manage its classes an
 
 ## Work
 
-App password : password
+App password 👉 password
 
-User Name
-    * Admin : admin_1
-              admin_2
-              
-    * Student : student_1
-                .
-                .
-                student_10
+User Name 👇
+
+    * Admin Role 👇   
+                    admin_1
+                    admin_2
+
+    * Student Role 👇 
+                    student_1
+                    .
+                        to
+                    .
+                    student_10
 
 ## Database
 
