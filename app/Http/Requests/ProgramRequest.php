@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Models\Role;
 use Illuminate\Foundation\Http\FormRequest;
 
-class ProgramCreateRequest extends FormRequest
+class ProgramRequest extends FormRequest
 {
     public function authorize()
     {

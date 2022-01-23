@@ -35,7 +35,7 @@ Route::middleware(['role:admin'])->group(function () {
         ->name('student.subscribe');
 
     Route::resource('program', ProgramController::class)
-    ->except('show');
+        ->except('show');
 });
 
 require __DIR__ . '/auth.php';

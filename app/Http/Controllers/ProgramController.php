@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminRequest;
-use App\Http\Requests\ProgramCreateRequest;
+use App\Http\Requests\ProgramRequest;
 use App\Models\Grade;
 use App\Models\Program;
 use App\Models\Subject;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class ProgramController extends Controller
 {
@@ -22,7 +21,7 @@ class ProgramController extends Controller
         return view('create-program');
     }
 
-    public function store(ProgramCreateRequest $request, Program $program)
+    public function store(ProgramRequest $request, Program $program)
     {
         $program->create($request->validated());
 
@@ -42,7 +41,7 @@ class ProgramController extends Controller
             ]);
     }
 
-    public function update(Request $request, Program $program)
+    public function update(ProgramRequest $request, Program $program)
     {
         $program->update($request->all());
 
