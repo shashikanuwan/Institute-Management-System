@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentDashboardController;
@@ -22,6 +23,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/un-subscribe/{subscribe}', UnSubscribeController::class)
         ->name('un.subscribe');
+});
+
+Route::middleware(['role:admin'])->group(function () {
+    Route::get('/admin/dashboard',  AdminDashboardController::class)
+        ->name('admin.dashboard');
 });
 
 require __DIR__ . '/auth.php';
